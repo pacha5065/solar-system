@@ -29,3 +29,9 @@ jobs:
             
             - name: invoke unit test
               run: npm test
+              
+            - name: archite test results
+              uses: actions/upload-artifact@v3
+              with:
+                name: mocha-test-result
+                path: test-results.xml
