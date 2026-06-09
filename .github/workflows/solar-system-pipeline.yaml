@@ -22,7 +22,7 @@ jobs:
 
             - name: Install dependencies
               run: |
-                echo 'Running npm install command for installing dependencies'
+                echo 'Running npm  install command for installing dependencies'
                 npm install
             
             - name: invoke unit test
