@@ -35,10 +35,11 @@ jobs:
                 npm install
             
             - name: invoke unit test
+              id: unit-test-output
               run: npm test
               
             - name: archive test results
-              if: always()
+              if: steps.unit-test-output.outcome == 'failure' || steps.unit-test-output.outcome == 'success'
               uses: actions/upload-artifact@v4
               with:
                 name: mocha-test-result
